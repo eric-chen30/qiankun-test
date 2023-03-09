@@ -1,0 +1,24 @@
+{
+  "name": "qiankun-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm-run-all --serial install:*",
+    "start": "npm-run-all --parallel start:*",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric-chen30/qiankun-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eric-chen30/qiankun-test/issues"
+  },
+  "homepage": "https://github.com/eric-chen30/qiankun-test#readme",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
