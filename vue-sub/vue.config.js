@@ -1,7 +1,7 @@
 const { name } = require('./package.json')
 
 module.exports = {
-  publicPath: '/subapp/sub-vue',
+  publicPath: '/subapp/vue-sub',
   transpileDependencies: ['common'],
   chainWebpack: config => config.resolve.symlinks(false),
   // 打包输出格式: 打包成 umd 格式，为了让 qiankun拿到子应用 export的生命周期函数
@@ -9,7 +9,8 @@ module.exports = {
     output: {
       // 把子应用打包成 umd 库格式
       library: `${name}-[name]`,
-      libraryTarget: 'umd',
+      // libraryTarget: 'umd',
+      libraryTarget: 'window',
       // jsonpFunction: `webpackJsonp_${name}`
       chunkLoadingGlobal: `webpackJsonp_${name}`
     }

@@ -35,10 +35,10 @@ export default {
       window.addEventListener('pushState', this.bindCurrent)
       window.addEventListener('popstate', this.bindCurrent)
 
-      this.$once('hook:beforeDestroy', () => {
-        window.removeEventListener('pushState', this.bindCurrent)
-        window.removeEventListener('popstate', this.bindCurrent)
-      })
+      // this.$once('hook:beforeDestroy', () => {
+      //   window.removeEventListener('pushState', this.bindCurrent)
+      //   window.removeEventListener('popstate', this.bindCurrent)
+      // })
     }
   },
   mounted() {
