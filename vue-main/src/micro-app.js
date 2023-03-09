@@ -2,7 +2,7 @@
 const microApps = [
   {
     name: 'vue-sub',
-    entry: '//localhost:6666',
+    entry: '//localhost:6677',
     activeRule: '/vue-sub',
     container: '#subapp-container',
     props: {
@@ -11,7 +11,7 @@ const microApps = [
   },
   {
     name: 'react-sub',
-    entry: '//localhost:6667',
+    entry: '//localhost:6688',
     activeRule: '/react-sub',
     container: '#subapp-container',
     props: {

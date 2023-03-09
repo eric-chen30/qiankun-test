@@ -11,5 +11,9 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    // 配置port、host、https
+    port: 8080
   }
 })
