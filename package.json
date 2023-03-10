@@ -5,7 +5,17 @@
   "main": "index.js",
   "scripts": {
     "install": "npm-run-all --serial install:*",
+    "install:vue-main": "cd vue-main && npm i",
+    "install:vue-sub": "cd vue-sub && npm i",
+    "install:react-sub": "cd react-sub && npm i",
     "start": "npm-run-all --parallel start:*",
+    "start:vue-main": "cd vue-main && npm start",
+    "start:vue-sub": "cd vue-sub && npm start",
+    "start:react-sub": "cd react-sub && npm start",
+    "build": "npm-run-all build:*",
+    "build:vue-main": "cd vue-main && npm run build",
+    "build:vue-sub": "cd vue-sub && npm run build",
+    "build:react-sub": "cd react-sub && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +29,9 @@
   },
   "homepage": "https://github.com/eric-chen30/qiankun-test#readme",
   "dependencies": {
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.0.0-beta.0"
   }
 }

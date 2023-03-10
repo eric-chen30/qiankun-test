@@ -1,27 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+    </div>
     <div>
       <p>当前处于<code>{{ isInQiankun ? 'qiankun' : '独立运行'}}</code>环境</p>
     </div>
     <div class="btns">
-      <template v-if="isInQiankun">
+      <template>
         <button @click="gotoSubReact">从当前子应用内跳转到`sub-react`子应用</button>
         <button @click="openSubVue">独立打开sub-vue子应用</button>
       </template>
     </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  },
   computed: {
     isInQiankun () {
       return window.__POWERED_BY_QIANKUN__
@@ -49,8 +47,20 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #0854a0;
   margin-top: 60px;
+  background-color: rgb(149, 149, 222);
+}
+#nav {
+  padding: 30px;
+}
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 .btns{
   margin: 100px;

@@ -1,3 +1,24 @@
+<template>
+  <div id="app">
+    <div class="layout-wrapper">
+      <div class="layout-header">
+        <div class="title">qiankun-test</div>
+        <ul class="sub-apps">
+          <li
+            v-for="item in microApps"
+            :class="{ active: item.activeRule === current }"
+            :key="item.name"
+            @click="goto(item)">
+            {{ item.name }}
+          </li>
+        </ul>
+      </div>
+      <!-- 子应用挂载处 -->
+      <div id="#subapp-container"></div>
+    </div>
+  </div>
+</template>
+
 <script lang="ts">
 import microApps from './micro-app'
 export default {
@@ -14,7 +35,8 @@ export default {
     },
     // 根据初始url决定子应用的显示
     bindCurrent () {
-      const path = window.location.pathname
+      console.log(window)
+      const path = window.location.pathname  // vue-sub
       if (this.microApps.findIndex(item => item.activeRule === path) >= 0) {
         this.current = path
       }
@@ -49,25 +71,6 @@ export default {
   },
 }
 </script>
-
-<template>
-  <div class="layout-wrapper">
-    <div class="layout-header">
-      <div class="title">qiankun-test</div>
-      <ul class="sub-apps">
-        <li
-          v-for="item in microApps"
-          :class="{ active: item.activeRule === current }"
-          :key="item.name"
-          @click="goto(item)">
-          {{ item.name }}
-        </li>
-      </ul>
-    </div>
-    <!-- 子应用挂载处 -->
-    <div id="#subapp-container"></div>
-  </div>
-</template>
 
 <style scoped lang="scss">
 html, body{

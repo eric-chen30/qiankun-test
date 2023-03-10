@@ -2,7 +2,7 @@ import './public-path'
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
-import routes from './routes';
+import routes from './router';
 
 Vue.config.productionTip = false
 let instance = null
@@ -10,7 +10,7 @@ let instance = null
 function render (props = {}) {
   const { container, routerBase } = props
 
-  const router = new VueRouter({
+    const router = new VueRouter({
     base: window.__POWERED_BY_QIANKUN__ ? routerBase : process.env.BASE_URL,
     mode: 'history',
     routes
@@ -41,7 +41,3 @@ export async function unmount () {
   instance.$el.innerHTML = ''
   instance = null
 }
-
-// new Vue({
-//   render: h => h(App),
-// }).$mount('#app')

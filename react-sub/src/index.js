@@ -17,8 +17,9 @@ function render(props) {
   ReactDOM.render(<App />, container ? container.querySelector('#root') : document.querySelector('#root'));
 }
 
+
 if (!window.__POWERED_BY_QIANKUN__) {
-  render({});
+  render();
 }
 
 export async function bootstrap() {
